@@ -647,8 +647,6 @@ th {
 .room-view>.container .file-btn label {
   box-sizing: border-box;
   width: 100%;
-  height: 150%;
-  vertical-align: middle;
   text-align: center;
   background-color: #3d195b;
   display: inline-block;
