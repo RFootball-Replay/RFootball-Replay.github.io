@@ -554,18 +554,19 @@ th {
   padding: 10px;
   overflow: hidden;
   box-sizing: border-box;
-  border-radius: 5px
+  border-radius: 5px;
+  outline: #00ff85 groove 1px;
 }
 
-.dialog>h1,
-.room-view>.container>h1 {
+.dialog>h4,
+.room-view>.container>h4 {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px !important;
   padding-top: 6px;
   padding-bottom: 5px;
   border-bottom: 3px;
-  border-bottom-color: #c13535;
+  border-bottom-color:#00ff85;
   border-bottom-style: solid
 }
 
