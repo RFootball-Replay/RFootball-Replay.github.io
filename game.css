@@ -201,7 +201,6 @@ h6 {
 
 p {
   margin: 0;
-  text-align: center;
   line-height: 150%;
 }
 
@@ -595,7 +594,8 @@ th {
 
 .dialog button,
 .room-view>.container button {
-  background-color: #3d195b
+  background-color: #3d195b;
+  outline: #00ff85 solid 3px;
 }
 
 .dialog button:hover,
@@ -650,7 +650,8 @@ th {
   text-align: center;
   background-color: #3d195b;
   display: inline-block;
-  cursor: pointer
+  cursor: pointer;
+  outline: #00ff85 solid 3px;
 }
 
 .dialog .file-btn label:hover,
@@ -1964,15 +1965,16 @@ th {
 }
 
 .game-view>.bottom-section button {
-  background-color: #244967
+  background-color: #3d195b;
+  outline: #00ff85 solid 3px;
 }
 
 .game-view>.bottom-section button:hover {
-  background-color: #2f5e85
+  background-color: #6c4190
 }
 
 .game-view>.bottom-section button:active {
-  background-color: #193449
+  background-color: #32134b
 }
 
 .game-view>.bottom-section button:disabled {
@@ -2924,7 +2926,7 @@ th {
 }
 
 .settings-view .tabs .selected {
-  background-color: #2f5e85
+  background-color: #3d195b
 }
 
 .settings-view .section {
@@ -2956,16 +2958,16 @@ th {
 .settings-view .section select {
   height: 25px;
   border: none;
-  background-color: #244967;
+  background-color: #3d195b;
   margin-left: 10px
 }
 
 .settings-view .section select:hover {
-  background-color: #2f5e85
+  background-color: #6c4190
 }
 
 .settings-view .section select option {
-  background-color: #1A2125
+  background-color: #1f1a25
 }
 
 .settings-view .section .loc {
@@ -3095,15 +3097,16 @@ th {
 }
 
 .replay-controls-view button {
-  background-color: #244967
+  background-color: #3d195b;
+  outline: #00ff85 solid 3px;
 }
 
 .replay-controls-view button:hover {
-  background-color: #2f5e85
+  background-color: #6c4190
 }
 
 .replay-controls-view button:active {
-  background-color: #193449
+  background-color: #32134b
 }
 
 .replay-controls-view button:disabled {

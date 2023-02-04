@@ -262,8 +262,8 @@ function gifalizer() {
     if (canvas2.getContext) {
 
       ctx2 = canvas2.getContext('2d');
-      ctx2.canvas.width = 500;
-      ctx2.canvas.height = 250;
+      ctx2.canvas.width = 1060;
+      ctx2.canvas.height = 650;
 
       //Loading of the home test image - img1
       var img2 = new Image();
@@ -1598,8 +1598,8 @@ function gifalizer() {
         if (canvas.getContext) {
 
           ctx = canvas.getContext('2d');
-          ctx.canvas.width = 500;
-          ctx.canvas.height = 250;
+          ctx.canvas.width = 1060;
+          ctx.canvas.height = 650;
 
           //Loading of the home test image - img1
           var img1 = new Image();
@@ -1631,8 +1631,8 @@ function gifalizer() {
         if (canvas2.getContext) {
 
           ctx2 = canvas2.getContext('2d');
-          ctx2.canvas.width = 500;
-          ctx2.canvas.height = 250;
+          ctx2.canvas.width = 1060;
+          ctx2.canvas.height = 650;
 
           //Loading of the home test image - img1
           var img2 = new Image();
