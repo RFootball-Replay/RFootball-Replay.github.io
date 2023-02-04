@@ -285,7 +285,7 @@ function gifalizer() {
         ctx2.font = "20px Verdana";
         ctx2.textAlign = "center";
         ctx2.fillStyle = "rgba(0,0,0,1)";
-        ctx2.fillText(par, 530, 45);
+        ctx2.fillText(par, 530, 30);
         /*ctx.fillRect(240, 0, 220, 350);
         ctx.fillStyle = "rgba(255, 255, 255, 1)";
         ctx.strokeStyle = "rgba(0, 0, 0, 1)";
@@ -1611,15 +1611,15 @@ function gifalizer() {
             //draw a box over the top
             ctx.font = "45px Arial";
             ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
-            ctx.fillRect(370, 0, 320, 650);
+            ctx.fillRect(370, 35, 320, 580);
             ctx.fillStyle = "rgba(255, 255, 255, 1)";
             ctx.strokeStyle = "rgba(0, 0, 0, 1)";
             ctx.lineWidth = 8;
             //console.log(match[mtc].thirds);
 
             for (var i = 0; i < 3; i++) {
-              ctx.strokeText("" + Math.round(100 * (match[mtc].thirds[i] / (match[mtc].thirds[0] + match[mtc].thirds[1] + match[mtc].thirds[2]))) + "%", 190 + 300 * i, 390);
-              ctx.fillText("" + Math.round(100 * (match[mtc].thirds[i] / (match[mtc].thirds[0] + match[mtc].thirds[1] + match[mtc].thirds[2]))) + "%", 190 + 300 * i, 390);
+              ctx.strokeText("" + Math.round(100 * (match[mtc].thirds[i] / (match[mtc].thirds[0] + match[mtc].thirds[1] + match[mtc].thirds[2]))) + "%", 180 + 310 * i, 370);
+              ctx.fillText("" + Math.round(100 * (match[mtc].thirds[i] / (match[mtc].thirds[0] + match[mtc].thirds[1] + match[mtc].thirds[2]))) + "%", 180 + 310 * i, 370);
             }
             document.getElementById("thirdStats").appendChild(canvas);
 
@@ -1650,10 +1650,10 @@ function gifalizer() {
               ctx2.arc((playerPos[0][1][i].x + stadion[0]) * 960 / (2 * stadion[0]) + 50, (playerPos[0][1][i].y + stadion[1]) * 580 / (2 * stadion[1]) + 35, 10, 0, 2 * Math.PI);
               ctx2.fill();
             }
-            ctx2.font = "20px Verdana";
+            ctx2.font = "20px Verdana";heatmap
             ctx2.textAlign = "center";
             ctx2.fillStyle = "rgba(0,0,0,1)";
-            ctx2.fillText(playerList[1], 530, 45);
+            ctx2.fillText(playerList[1], 530, 30);
             /*ctx.fillRect(240, 0, 220, 350);
             ctx.fillStyle = "rgba(255, 255, 255, 1)";
             ctx.strokeStyle = "rgba(0, 0, 0, 1)";
