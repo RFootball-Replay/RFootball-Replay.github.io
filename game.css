@@ -555,7 +555,7 @@ th {
   overflow: hidden;
   box-sizing: border-box;
   border-radius: 5px;
-  outline: #00ff85 groove 3px;
+  outline: #00ff85 outset 5px;
 }
 
 .dialog>h1,
@@ -646,19 +646,19 @@ th {
   box-sizing: border-box;
   width: 100%;
   text-align: center;
-  background-color: #244967;
+  background-color: #3d195b;
   display: inline-block;
   cursor: pointer
 }
 
 .dialog .file-btn label:hover,
 .room-view>.container .file-btn label:hover {
-  background-color: #2f5e85
+  background-color: #6c4190
 }
 
 .dialog .file-btn label:active,
 .room-view>.container .file-btn label:active {
-  background-color: #193449
+  background-color: #32134b
 }
 
 .dialog .file-btn label:disabled,
