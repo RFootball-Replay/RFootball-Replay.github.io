@@ -1618,8 +1618,8 @@ function gifalizer() {
             //console.log(match[mtc].thirds);
 
             for (var i = 0; i < 3; i++) {
-              ctx.strokeText("" + Math.round(100 * (match[mtc].thirds[i] / (match[mtc].thirds[0] + match[mtc].thirds[1] + match[mtc].thirds[2]))) + "%", 180 + 310 * i, 370);
-              ctx.fillText("" + Math.round(100 * (match[mtc].thirds[i] / (match[mtc].thirds[0] + match[mtc].thirds[1] + match[mtc].thirds[2]))) + "%", 180 + 310 * i, 370);
+              ctx.strokeText("" + Math.round(100 * (match[mtc].thirds[i] / (match[mtc].thirds[0] + match[mtc].thirds[1] + match[mtc].thirds[2]))) + "%", 170 + 320 * i, 370);
+              ctx.fillText("" + Math.round(100 * (match[mtc].thirds[i] / (match[mtc].thirds[0] + match[mtc].thirds[1] + match[mtc].thirds[2]))) + "%", 170 + 320 * i, 370);
             }
             document.getElementById("thirdStats").appendChild(canvas);
 
