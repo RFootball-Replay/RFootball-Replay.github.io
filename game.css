@@ -558,8 +558,8 @@ th {
   outline: #00ff85 groove 1px;
 }
 
-.dialog>h4,
-.room-view>.container>h4 {
+.dialog>h1,
+.room-view>.container>h1 {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px !important;
