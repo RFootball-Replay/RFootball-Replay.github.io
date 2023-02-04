@@ -567,7 +567,8 @@ th {
   padding-bottom: 5px;
   border-bottom: 3px;
   border-bottom-color:#00ff85;
-  border-bottom-style: solid
+  border-bottom-style: solid;
+  text-align:center;
 }
 
 .dialog>:not(:last-child),
@@ -592,17 +593,17 @@ th {
 
 .dialog button,
 .room-view>.container button {
-  background-color: #244967
+  background-color: #3d195b
 }
 
 .dialog button:hover,
 .room-view>.container button:hover {
-  background-color: #2f5e85
+  background-color: #6c4190
 }
 
 .dialog button:active,
 .room-view>.container button:active {
-  background-color: #193449
+  background-color: #32134b
 }
 
 .dialog button:disabled,
