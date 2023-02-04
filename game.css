@@ -555,7 +555,7 @@ th {
   overflow: hidden;
   box-sizing: border-box;
   border-radius: 5px;
-  outline: #00ff85 ridge 3px;
+  outline: #00ff85 groove 3px;
 }
 
 .dialog>h1,
