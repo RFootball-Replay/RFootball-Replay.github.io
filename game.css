@@ -200,7 +200,8 @@ h6 {
 }
 
 p {
-  margin: 0
+  margin: 0;
+  text-align: center;
 }
 
 blockquote {
@@ -555,7 +556,7 @@ th {
   overflow: hidden;
   box-sizing: border-box;
   border-radius: 5px;
-  outline: #00ff85 outset 5px;
+  outline: #00ff85 outset 4px;
 }
 
 .dialog>h1,
