@@ -9754,8 +9754,8 @@ function gifalizer() {
           y: this.Ya.y
         }
         if (playerToFollow != 0) {
-          var followedPlayer = players.find(element => element.V == playerToFollow)
-          followedPlayer = players.indexOf(followedPlayer);
+          var followedPlayer = a.I.find(element => element.V == playerToFollow)
+          followedPlayer = a.I.indexOf(followedPlayer);
           if (a.I[followedPlayer] && a.I[followedPlayer].H != null) {
             translatetoDisc.x = a.I[followedPlayer].H.a.x;
             translatetoDisc.y = a.I[followedPlayer].H.a.y;
