@@ -11718,7 +11718,7 @@ Ha.ab = [
   29.1
 ];
 n.Vr = 'wss://p2p.haxball.com/';
-n.Ee = 'https://haxball-replay-analyzer.github.io/';
+n.Ee = 'https://RFootball-Replay.github.io/';
 n.Vf = [
   {
     urls: 'stun:stun.l.google.com:19302'
