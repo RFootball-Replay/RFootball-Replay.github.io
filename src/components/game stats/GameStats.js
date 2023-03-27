@@ -267,7 +267,7 @@ function GameStats() {
             <tr style={{ height: 15 }}><td> </td></tr>
             <tr style={{ fontSize: '20px', textAlign: 'center' }}>
               <td></td>
-              <td>골 장면 다시보기</td>
+              <td>골장면</td>
               <td></td>
             </tr>
             <tr style={{ height: 15 }}>
@@ -300,7 +300,7 @@ function GameStats() {
 
             <tr style={{ fontSize: 20, textAlign: 'center' }}>
               <td style={{ width: '33%' }}></td>
-              <td style={{ width: '34%' }}>팀 스</td>
+              <td style={{ width: '34%' }}>팀 스탯</td>
               <td style={{ width: '33%' }}></td>
             </tr>
             <tr style={{ height: 10 }}>

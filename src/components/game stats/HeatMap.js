@@ -51,7 +51,7 @@ function HeatMap() {
           if (goal.scorer == player) {
             ctx.beginPath();
             ctx.strokeStyle = 'red';
-            ctx.lineWidth = 15;
+            ctx.lineWidth = 10;
             ctx.moveTo(goal.shot.x, goal.shot.y);
             ctx.lineTo(goal.ballCoord.x, goal.ballCoord.y);
             ctx.stroke();
@@ -62,13 +62,13 @@ function HeatMap() {
           if (goal.assist?.player === player) {
             ctx.beginPath();
             ctx.strokeStyle = 'red';
-            ctx.lineWidth = 5;
+            ctx.lineWidth = 10;
             ctx.moveTo(goal.assist.shot.x, goal.assist.shot.y);
             ctx.lineTo(goal.shot.x, goal.shot.y);
             ctx.lineTo(goal.ballCoord.x, goal.ballCoord.y);
             ctx.stroke();
             ctx.beginPath();
-            ctx.arc(goal.shot.x, goal.shot.y, 25, 0, 2 * Math.PI)
+            ctx.arc(goal.shot.x, goal.shot.y, 20, 0, 2 * Math.PI)
             ctx.fillStyle = 'red'
             ctx.fill();
           }
@@ -78,7 +78,7 @@ function HeatMap() {
           if (kick.player === player) {
             ctx.beginPath();
             ctx.fillStyle = 'red'
-            ctx.arc(kick.x, kick.y, 25, 0, 2 * Math.PI)
+            ctx.arc(kick.x, kick.y, 20, 0, 2 * Math.PI)
             ctx.fill();
           }
         }
@@ -87,7 +87,7 @@ function HeatMap() {
           if (pass.player === player) {
             ctx.beginPath();
             ctx.strokeStyle = 'red';
-            ctx.lineWidth = 15;
+            ctx.lineWidth = 10;
             drawArrow(ctx, pass.lastShot, pass.shot)
           }
         }
@@ -96,7 +96,7 @@ function HeatMap() {
           if (shot.player === player) {
             ctx.beginPath();
             ctx.strokeStyle = 'red';
-            ctx.lineWidth = 15;
+            ctx.lineWidth = 10;
             drawArrow(ctx, shot.from, shot.to)
           }
         }
@@ -113,7 +113,7 @@ function HeatMap() {
   }, [draw])
 
   return (
-    <canvas ref={canvasRef} width={500} height={250} style={{ margin: 'auto', display: 'block', position: 'absolute', top: '50%', bottom: 0, left: 0, right: 0 }} ></canvas>
+    <canvas ref={canvasRef} width={1060} height={650} style={{ margin: 'auto', display: 'block', position: 'absolute', top: '50%', bottom: 0, left: 0, right: 0 }} ></canvas>
   );
 }
 

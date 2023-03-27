@@ -72,12 +72,12 @@ function Home() {
     <>
       <div className='roomlist-view' style={{ zIndex: 5 }}>
         <div className='dialog'>
-          <h1>Haxball Replay Analyzer v{version}</h1>
+          <h1>R.Football 리플레이 분석기 v{version}</h1>
           <p><a href="https://github.com/RFootball-Replay/RFootball-Replay.github.io/issues">문제 발생 시 연락처</a><br />이곳에 해당 문제를 상세히 기술 부탁드립니다. 빠른 처리에 도움이 됩니다.<br /><a href="https://discord.gg/yeHYYHNub7">커뮤니티</a></p>
           <div className='file-btn'>
             <label htmlFor='replayfile'>
-              <span style={{ float: 'left' }}>►</span>
-              <span style={{ float: 'center' }}>리플레이 분석</span>
+              <span style={{ float: 'left' }}>📊</span>
+              <span style={{ float: 'center' }}>📀리플레이 분석</span>
             </label>
             <input id='replayfile' type='file' accept='.hbr2' data-hook='replayfile' onChange={handleChange} />
             <br /><br />
