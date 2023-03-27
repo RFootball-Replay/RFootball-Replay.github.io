@@ -349,7 +349,7 @@ function GameStats() {
             <ThirdStats />
           </div>
           <div style={{ height: '50%', overflow: 'hidden' }}>
-            <p style={{ textAlign: 'center', fontSize: 18 }}>{selectedHeatmap.split(' ')[0]} - {selectedPlayer == -1 ? match[mtc].redTeam[0] : selectedPlayer}:</p>
+            <p style={{ textAlign: 'center', fontSize: 25, left: '50%' }}>{selectedHeatmap.split(' ')[0]} - {selectedPlayer == -1 ? match[mtc].redTeam[0] : selectedPlayer}:</p>
             {match[mtc].stadium ? <HeatMap /> : null}
           </div>
         </div >

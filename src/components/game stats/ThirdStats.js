@@ -12,7 +12,7 @@ function ThirdStats() {
 
   function draw(ctx) {
 
-    drawStadium(ctx, stadium);
+    drawStadium(ctx, stadium, false);
     ctx.setTransform(1, 0, 0, 1, 0, 0)
     ctx.font = "45px Arial";
     ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
@@ -36,7 +36,7 @@ function ThirdStats() {
   }, [draw])
 
   return (
-    <canvas ref={canvasRef} width={500} height={250} style={{ margin: 'auto', display: 'block', position: 'absolute', top: 0, bottom: '50%', left: 0, right: 0 }} ></canvas>
+    <canvas ref={canvasRef} width={500} height={250} style={{ margin: 'auto', display: 'block', position: 'absolute', top: 0, bottom: '70%', left: 270, right: 0 }} ></canvas>
   );
 }
 

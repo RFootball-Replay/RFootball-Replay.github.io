@@ -98,10 +98,10 @@ function calculate_arc(a, b, curve) {
   return arc;
 }
 
-export function drawStadium(ctx, stadium) {
+export function drawStadium(ctx, stadium, isheatmap) {
   if (stadium == false) stadium = classic;
   ctx.setTransform(1, 0, 0, 1, 0, 0);
-  ctx.scale(1060 / stadium.width / 2, 650 / stadium.height / 2)
+  ctx.scale(isheatmap?1060:500 / stadium.width / 2, isheatmap?650:250 / stadium.height / 2)
   ctx.translate(stadium.width, stadium.height);
   ctx.beginPath();
 
