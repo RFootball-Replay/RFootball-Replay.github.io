@@ -113,7 +113,7 @@ function HeatMap() {
   }, [draw])
 
   return (
-    <canvas ref={canvasRef} width={1060} height={650} style={{ margin: 'auto', display: 'block', position: 'absolute', top: '50%', bottom: 0, left: 0, right: 0 }} ></canvas>
+    <canvas ref={canvasRef} width={1060} height={650} style={{ margin: 'auto', display: 'block', top: '50%', bottom: 0, left: 0, right: 0 }} ></canvas>
   );
 }
 
