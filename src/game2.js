@@ -603,10 +603,8 @@ function aa(a) {
     t.push(b);
     b.Jm.onclick = function (el) {
       g(b);
-      if (el.target.id === 'video_button') {
-        $("#selectPlayerToFollow")[0].onchange = function () {
-          setPlayerToFollow();
-        }
+      $("#selectPlayerToFollow")[0].onchange = function () {
+        setPlayerToFollow();
       }
     }
   }

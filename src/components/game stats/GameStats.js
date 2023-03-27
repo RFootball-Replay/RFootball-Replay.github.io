@@ -344,11 +344,11 @@ function GameStats() {
             <PlayerStats />
           </table>
         </div >
-        <div id='rightHalf' style={{ position: 'absolute', left: '50%', top: '10%', overflowY: 'hidden', width: '50%', height: '90%' }}>
-          <div style={{ height: '50%', overflow: 'hidden' }}>
+        <div id='rightHalf' style={{ position: 'fixed', left: '50%', top: '10%', overflowY: 'scroll', width: '50%', height: '90%' }}>
+          <div style={{ height: '50%', overflow: 'scroll' }}>
             <ThirdStats />
           </div>
-          <div style={{ height: '50%', overflow: 'hidden' }}>
+          <div style={{ height: '50%', overflow: 'scroll' }}>
             <p style={{ textAlign: 'center', fontSize: 18 }}>{selectedHeatmap.split(' ')[0]} - {selectedPlayer == -1 ? match[mtc].redTeam[0] : selectedPlayer}:</p>
             {match[mtc].stadium ? <HeatMap /> : null}
           </div>

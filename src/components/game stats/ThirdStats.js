@@ -13,6 +13,8 @@ function ThirdStats() {
   function draw(ctx) {
 
     drawStadium(ctx, stadium);
+    ctx.canvas.width = 1060;
+    ctx.canvas.height = 650;
     ctx.setTransform(1, 0, 0, 1, 0, 0)
     ctx.font = "45px Arial";
     ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
