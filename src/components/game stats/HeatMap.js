@@ -15,7 +15,7 @@ function HeatMap() {
   const canvasRef = useRef(null);
 
   function drawArrow(ctx, from, to) {
-    var headlen = 15; // length of head in pixels
+    var headlen = 30; // length of head in pixels
     var dx = to.x - from.x;
     var dy = to.y - from.y;
     var angle = Math.atan2(dy, dx);

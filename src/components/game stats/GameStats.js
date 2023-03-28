@@ -17,8 +17,8 @@ function GameStats() {
   const selectedHeatmap = useSelector(state => state.gameStats.selectedHeatmap)
   const dispatch = useDispatch();
 
-  const [redTeamName, setRedTeamName] = useState('RED');
-  const [blueTeamName, setBlueTeamName] = useState('BLUE')
+  const [redTeamName, setRedTeamName] = useState('레드');
+  const [blueTeamName, setBlueTeamName] = useState('블루')
 
   var offset = {
     left: divStyle.offsetLeft,
@@ -169,11 +169,11 @@ function GameStats() {
     for (let goal of match[1].goals) {
       var newGoal = JSON.parse(JSON.stringify(goal));
       newGoal.currentScore = [...newMatch.goals[newMatch.goals.length - 1].currentScore];
-      if (newGoal.for === 'Red') {
-        newGoal.for = 'Blue';
+      if (newGoal.for === '🟥레드') {
+        newGoal.for = '🟦블루';
         newGoal.currentScore[1]++;
       } else {
-        newGoal.for = 'Red';
+        newGoal.for = '🟥레드';
         newGoal.currentScore[0]++;
       }
       newMatch.goals.push(newGoal)
@@ -245,7 +245,7 @@ function GameStats() {
           {match[mtc].stadium.canBeStored && <button onClick={downloadMap} style={{ margin: '0 10px 0 30px' }}>Download map</button>}
         </h1>
         <button onClick={closeStats} style={{ position: 'absolute', right: 20 }} >닫기 ❌</button>
-        <div id='leftHalf' style={{ overflowY: 'scroll', width: '40%', float: 'left', height: '100%' }}>
+        <div id='leftHalf' style={{ overflowY: 'scroll', width: '39.5%', float: 'left', height: '100%' }}>
           <table style={{ width: '100%' }}><tbody>
             <tr id='trosso' style={{ textAlign: 'center' }}>
               <td style={{ fontSize: 40, color: 'red', width: '40%' }}>
@@ -267,7 +267,7 @@ function GameStats() {
             <tr style={{ height: 15 }}><td> </td></tr>
             <tr style={{ fontSize: '20px', textAlign: 'center' }}>
               <td></td>
-              <td>골장면</td>
+              <td>골 장면</td>
               <td></td>
             </tr>
             <tr style={{ height: 15 }}>
@@ -280,14 +280,14 @@ function GameStats() {
             {match[mtc].goals.map((goal, index) => {
               return (
                 <tr key={index}>
-                  <td className="Red" onClick={watchGoal_} goalindex={index} onMouseOverCapture={handleMouseOver} onMouseOutCapture={handleMouseOut} style={{ width: '45%', textAlign: 'right' }}>
-                    {goal.for === 'Red' && goal.scorer + (goal.assist ? ' (' + goal.assist.player + ')' : '')}
+                  <td className="🟥레드" onClick={watchGoal_} goalindex={index} onMouseOverCapture={handleMouseOver} onMouseOutCapture={handleMouseOut} style={{ width: '45%', textAlign: 'right' }}>
+                    {goal.for === '🟥레드' && goal.scorer + (goal.assist ? ' (' + goal.assist.player + ')' : '')}
                   </td>
                   <td style={{ width: '10%', textAlign: 'center', padding: 2 }}>
                     {goal.currentScore[0] + ':' + goal.currentScore[1]}
                   </td>
-                  <td className="Blue" onClick={watchGoal_} goalindex={index} onMouseOverCapture={handleMouseOver} onMouseOutCapture={handleMouseOut} style={{ width: '45%', textAlign: 'left' }}>
-                    {goal.for === 'Blue' && goal.scorer + (goal.assist ? ' (' + goal.assist.player + ')' : '')}
+                  <td className="🟦블루" onClick={watchGoal_} goalindex={index} onMouseOverCapture={handleMouseOver} onMouseOutCapture={handleMouseOut} style={{ width: '45%', textAlign: 'left' }}>
+                    {goal.for === '🟦블루' && goal.scorer + (goal.assist ? ' (' + goal.assist.player + ')' : '')}
                   </td>
                 </tr>
               )
@@ -347,7 +347,7 @@ function GameStats() {
         <div id='rightHalf' style={{ position: 'absolute', left: '40%', top: '10%', overflowY: 'scroll', width: '60%', height: '90%' }}>
           <div style={{ position: 'absolute' }}>
             <ThirdStats />
-            <p style={{ margin: 'auto', marginTop: 30, marginBottom: 30, textAlign: 'center', fontSize: 25 }}>{selectedHeatmap.split(' ')[0]} - {selectedPlayer == -1 ? match[mtc].redTeam[0] : selectedPlayer}:</p>
+            <p style={{ margin: 'auto', marginTop: 20, marginBottom: 20, textAlign: 'center', fontSize: 25 }}>{selectedHeatmap.split(' ')[0]} - {selectedPlayer == -1 ? match[mtc].redTeam[0] : selectedPlayer}:</p>
             {match[mtc].stadium ? <HeatMap /> : null}
           </div>
         </div >

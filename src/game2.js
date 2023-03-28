@@ -621,7 +621,7 @@ function aa(a) {
   }
   null == a && (a = !1);
   var k = this;
-  aa.N = '<div class=\'dialog settings-view\'><h1>Settings</h1><button data-hook=\'close\'>Close</button><div class=\'tabs\'><button data-hook=\'soundbtn\'>Sound</button><button id=\'video_button\' data-hook=\'videobtn\'>Video</button><button data-hook=\'inputbtn\'>Input</button><button data-hook=\'miscbtn\'>Misc</button></div><div data-hook=\'presskey\' tabindex=\'-1\'><div>Press a key</div></div><div class=\'tabcontents\'><div class=\'section\' data-hook=\'miscsec\'><div class=\'loc\' data-hook=\'loc\'></div><div class=\'loc\' data-hook=\'loc-ovr\'></div><button data-hook=\'loc-ovr-btn\'></button></div><div class=\'section\' data-hook=\'soundsec\'><div data-hook="tsound-main">Sounds enabled</div><div data-hook="tsound-chat">Chat sound enabled</div><div data-hook="tsound-highlight">Nick highlight sound enabled</div><div data-hook="tsound-crowd">Crowd sound enabled</div></div><div class=\'section\' data-hook=\'inputsec\'></div><div class=\'section\' data-hook=\'videosec\'><div>Viewport Mode:<select data-hook=\'viewmode\'><option>Dynamic</option><option>Restricted 840x410</option><option>Full 1x Zoom</option><option>Full 1.25x Zoom</option><option>Full 1.5x Zoom</option><option>Full 1.75x Zoom</option><option>Full 2x Zoom</option><option>Full 2.25x Zoom</option><option>Full 2.5x Zoom</option></select></div><div>FPS Limit:<select data-hook=\'fps\'><option>None (Recommended)</option><option>30</option></select></div><div>Resolution Scaling:<select data-hook=\'resscale\'><option>100%</option><option>75%</option><option>50%</option><option>25%</option></select></div><div>카메라 시점:<select id="selectPlayerToFollow" onchange="setPlayerToFollow()">' + playersToFollowList() + '</select></div><div data-hook="tvideo-teamcol">Custom team colors enabled</div><div data-hook="tvideo-showindicators">Show chat indicators</div><div data-hook="tvideo-showavatars">Show player avatars</div></div></div></div>';
+  aa.N = '<div class=\'dialog settings-view\'><h1>⚙️설정</h1><button data-hook=\'close\'>닫기</button><div class=\'tabs\'><button data-hook=\'soundbtn\'>🔊소리</button><button id=\'video_button\' data-hook=\'videobtn\'>🎥카메라</button><button data-hook=\'inputbtn\'>⌨️키보드</button><button data-hook=\'miscbtn\'>🎸기타</button></div><div data-hook=\'presskey\' tabindex=\'-1\'><div>Press a key</div></div><div class=\'tabcontents\'><div class=\'section\' data-hook=\'miscsec\'><div class=\'loc\' data-hook=\'loc\'></div><div class=\'loc\' data-hook=\'loc-ovr\'></div><button data-hook=\'loc-ovr-btn\'></button></div><div class=\'section\' data-hook=\'soundsec\'><div data-hook="tsound-main">Sounds enabled</div><div data-hook="tsound-chat">Chat sound enabled</div><div data-hook="tsound-highlight">Nick highlight sound enabled</div><div data-hook="tsound-crowd">Crowd sound enabled</div></div><div class=\'section\' data-hook=\'inputsec\'></div><div class=\'section\' data-hook=\'videosec\'><div>Viewport Mode:<select data-hook=\'viewmode\'><option>Dynamic</option><option>Restricted 840x410</option><option>Full 1x Zoom</option><option>Full 1.25x Zoom</option><option>Full 1.5x Zoom</option><option>Full 1.75x Zoom</option><option>Full 2x Zoom</option><option>Full 2.25x Zoom</option><option>Full 2.5x Zoom</option></select></div><div>FPS Limit:<select data-hook=\'fps\'><option>None (Recommended)</option><option>30</option></select></div><div>Resolution Scaling:<select data-hook=\'resscale\'><option>100%</option><option>75%</option><option>50%</option><option>25%</option></select></div><div>카메라 시점:<select id="selectPlayerToFollow" onchange="setPlayerToFollow()">' + playersToFollowList() + '</select></div><div data-hook="tvideo-teamcol">Custom team colors enabled</div><div data-hook="tvideo-showindicators">Show chat indicators</div><div data-hook="tvideo-showavatars">Show player avatars</div></div></div></div>';
   this.g = v.Ga(aa.N);
   var l = v.Ea(this.g);
   // console.log(l, this.g)
@@ -1540,18 +1540,18 @@ function Sb() {
   this.xc = 0;
   this.ab = [
   ];
-  this.Ar = new R(['Time is',
-    'Up!'], 16777215);
-  this.Gq = new R(['Red is',
-    'Victorious!'], 15035990);
-  this.Fq = new R(['Red',
-    "Scores!"], 15035990);
-  this.Cn = new R(['Blue is',
-    'Victorious!'], 625603);
-  this.Bn = new R(['Blue',
-    'Scores!'], 625603);
-  this.eq = new R(['Game',
-    'Paused'], 16777215)
+  this.Ar = new R(['경기',
+    '종료!'], 16777215);
+  this.Gq = new R(['레드팀',
+    '승리!'], 15035990);
+  this.Fq = new R(['레드팀',
+    "⚽득점!"], 15035990);
+  this.Cn = new R(['블루팀',
+    '승리!'], 625603);
+  this.Bn = new R(['블루팀',
+    '⚽득점!'], 625603);
+  this.eq = new R(['경기',
+    '중지'], 16777215)
 }
 function R(a, b) {
   for (var c = [
@@ -5075,7 +5075,7 @@ Gb.prototype = {
       // console.log(c.j.Fb.Eb.Ya);
       // console.log(this.K.Ma.K.ta.F[0].a); - BALL COORDINATES
       if (keepUpdating) {
-        if (a.w == "Red") match[match.length - 1].scoreRed++;//aktualny wynik red lub blue = a.$
+        if (a.w == "🟥레드") match[match.length - 1].scoreRed++;//aktualny wynik red lub blue = a.$
         else match[match.length - 1].scoreBlue++;
         if (match[match.length - 1].spaceMode) {
           if (a.w == toucher.team) {
@@ -6440,7 +6440,7 @@ O.prototype = {
                   let rB = 1;
                   let rC = ball.y - (ball.vy / ball.vx) * ball.x;
                   if (keepUpdating) {
-                    if (d.ea.w == "Red" && ball.vx > 0 && 99.762 * ball.vx + ball.x > blueGoalCord[0] && ball.x < blueGoalCord[0]) {
+                    if (d.ea.w == "🟥레드" && ball.vx > 0 && 99.762 * ball.vx + ball.x > blueGoalCord[0] && ball.x < blueGoalCord[0]) {
                       let poz = rA * blueGoalCord[0] + rC;
                       if (poz > blueGoalCord[1] && poz < blueGoalCord[2]) {
                         //console.log("Celny strzał "+d.w);
@@ -6457,7 +6457,7 @@ O.prototype = {
                         });
                         match[match.length - 1].shotsRed++;
                       }
-                    } else if (d.ea.w == "Blue" && ball.vx < 0 && 99.762 * ball.vx + ball.x < redGoalCord[0] && ball.x > redGoalCord[0]) {
+                    } else if (d.ea.w == "🟦블루" && ball.vx < 0 && 99.762 * ball.vx + ball.x < redGoalCord[0] && ball.x > redGoalCord[0]) {
                       let poz = rA * redGoalCord[0] + rC;
                       if (poz > redGoalCord[1] && poz < redGoalCord[2]) {
                         //console.log("Celny strzał"+d.w);
@@ -6475,7 +6475,7 @@ O.prototype = {
                         match[match.length - 1].shotsBlue++;
                       }
                     }
-                    if (d.ea.w == "Red") match[match.length - 1].kicksRed++;
+                    if (d.ea.w == "🟥레드") match[match.length - 1].kicksRed++;
                     else match[match.length - 1].kicksBlue++;
                     //console.log("sprawdzenie czasu po kopnięciu",this.Hc)
                     //console.log("UWAGA",match,playerList)
@@ -6493,7 +6493,7 @@ O.prototype = {
                         if (lastToucher.team == d.ea.w) {
                           //console.log("Podanie ",lastKicker.name+" do "+d.w);
                           match[match.length - 1].passes.push(lastToucher.name);
-                          if (lastToucher.team == "Red") match[match.length - 1].passesRed++;
+                          if (lastToucher.team == "🟥레드") match[match.length - 1].passesRed++;
                           else match[match.length - 1].passesBlue++;
                         }
                         //console.log("tacz",d.w);
@@ -6512,7 +6512,7 @@ O.prototype = {
                             shot: ball,
                             lastShot: match[match.length - 1].kicks[match[match.length - 1].kicks.length - 2]
                           });
-                          if (lastKicker.team == "Red") match[match.length - 1].passesRed++;
+                          if (lastKicker.team == "🟥레드") match[match.length - 1].passesRed++;
                           else match[match.length - 1].passesBlue++;
                         }
                       }
@@ -6710,11 +6710,11 @@ O.prototype = {
             match[match.length - 1].bumps = [];
           }
           else match[match.length - 1].spaceMode = false;
-          if (std.qe.w == "Red") redGoalCord = [std.W.x, std.W.y, std.ca.y];
+          if (std.qe.w == "🟥레드") redGoalCord = [std.W.x, std.W.y, std.ca.y];
           else blueGoalCord = [std.W.x, std.W.y, std.ca.y];
 
           std = this.S.tc[1];
-          if (std.qe.w == "Red") redGoalCord = [std.W.x, std.ca.y, std.W.y];
+          if (std.qe.w == "🟥레드") redGoalCord = [std.W.x, std.ca.y, std.W.y];
           else blueGoalCord = [std.W.x, std.W.y, std.ca.y];
           if (redGoalCord[2] < redGoalCord[1]) {
             redGoalCord.push(redGoalCord[1]);
@@ -6760,16 +6760,16 @@ O.prototype = {
         }
         if (checkTeams && keepUpdating) {
           for (var i = 0; i < b.length; i++) {
-            if (b[i].ea.w == "Red" && !match[match.length - 1].redTeam.includes(b[i].w)) match[match.length - 1].redTeam.push(b[i].w);
-            else if (b[i].ea.w == "Blue" && !match[match.length - 1].blueTeam.includes(b[i].w)) match[match.length - 1].blueTeam.push(b[i].w);
+            if (b[i].ea.w == "🟥레드" && !match[match.length - 1].redTeam.includes(b[i].w)) match[match.length - 1].redTeam.push(b[i].w);
+            else if (b[i].ea.w == "🟦블루" && !match[match.length - 1].blueTeam.includes(b[i].w)) match[match.length - 1].blueTeam.push(b[i].w);
           }
           checkTeams = false;
         }
         if (match[match.length - 1].spaceMode && keepUpdating) {
-          if (toucher.team == "Red") match[match.length - 1].possRed++;
-          else if (toucher.team == "Blue") match[match.length - 1].possBlue++;
+          if (toucher.team == "🟥레드") match[match.length - 1].possRed++;
+          else if (toucher.team == "🟦블루") match[match.length - 1].possBlue++;
         } else if (kicker != undefined && keepUpdating) {
-          if (kicker.team == "Red") match[match.length - 1].possRed++;
+          if (kicker.team == "🟥레드") match[match.length - 1].possRed++;
           else match[match.length - 1].possBlue++;
         }
         for (a = 0; a < b.length;) d = b[a],
@@ -10706,9 +10706,9 @@ var Pb = {
   },
   uc = {
   };
-p.Ia = new p(0, 16777215, 0, - 1, 'Spectators', 't-spec', 0, 0);
-p.fa = new p(1, 15035990, - 1, 8, 'Red', 't-red', 0, 2);
-p.xa = new p(2, 5671397, 1, 16, 'Blue', 't-blue', 0, 4);
+p.Ia = new p(0, 16777215, 0, - 1, '👀관중', 't-spec', 0, 0);
+p.fa = new p(1, 15035990, - 1, 8, '🟥레드', 't-red', 0, 2);
+p.xa = new p(2, 5671397, 1, 16, '🟦블루', 't-blue', 0, 4);
 p.Ia.pg = p.Ia;
 p.fa.pg = p.xa;
 p.xa.pg = p.fa;
@@ -11892,7 +11892,7 @@ ab.tj = '<tr><td><span data-hook=\'tag\'></span><span data-hook=\'name\'></span>
 Aa.tj = '<div></div>';
 Za.N = '<div class=\'room-password-view\'><div class=\'dialog\'><h1>Password required</h1><div class=\'label-input\'><label>Password:</label><input data-hook=\'input\' /></div><div class=\'buttons\'><button data-hook=\'cancel\'>Cancel</button><button data-hook=\'ok\'>Ok</button></div></div></div>';
 Ya.N = '<div id=\'room-view\' class=\'room-view\'><div class=\'container\'><h1 data-hook=\'room-name\'></h1><div class=\'header-btns\'><button data-hook=\'rec-btn\'><i class=\'icon-circle\'></i>Rec</button><button data-hook=\'link-btn\'><i class=\'icon-link\'></i>Link</button><button data-hook=\'leave-btn\'><i class=\'icon-logout\'></i>Leave</button></div><div class=\'teams\'><div class=\'tools admin-only\'><button data-hook=\'auto-btn\'>Auto</button><button data-hook=\'rand-btn\'>Rand</button><button data-hook=\'lock-btn\'>Lock</button><button data-hook=\'reset-all-btn\'>Reset</button></div><div data-hook=\'red-list\'></div><div data-hook=\'spec-list\'></div><div data-hook=\'blue-list\'></div><div class=\'spacer admin-only\'></div></div><div class=\'settings\'><div><label class=\'lbl\'>Time limit</label><select data-hook=\'time-limit-sel\'></select></div><div><label class=\'lbl\'>Score limit</label><select data-hook=\'score-limit-sel\'></select></div><div><label class=\'lbl\'>Stadium</label><label class=\'val\' data-hook=\'stadium-name\'>testing the stadium name</label><button class=\'admin-only\' data-hook=\'stadium-pick\'>Pick</button></div></div><div class=\'controls admin-only\'><button data-hook=\'start-btn\'><i class=\'icon-play\'></i>Start game</button><button data-hook=\'stop-btn\'><i class=\'icon-stop\'></i>Stop game</button><button data-hook=\'pause-btn\'><i class=\'icon-pause\'></i>Pause</button></div></div></div>';
-aa.N = '<div class=\'dialog settings-view\'><h1>Settings</h1><button data-hook=\'close\'>Close</button><div class=\'tabs\'><button data-hook=\'soundbtn\'>Sound</button><button data-hook=\'videobtn\'>Video</button><button data-hook=\'inputbtn\'>Input</button><button data-hook=\'miscbtn\'>Misc</button></div><div data-hook=\'presskey\' tabindex=\'-1\'><div>Press a key</div></div><div class=\'tabcontents\'><div class=\'section\' data-hook=\'miscsec\'><div class=\'loc\' data-hook=\'loc\'></div><div class=\'loc\' data-hook=\'loc-ovr\'></div><button data-hook=\'loc-ovr-btn\'></button></div><div class=\'section\' data-hook=\'soundsec\'><div data-hook="tsound-main">Sounds enabled</div><div data-hook="tsound-chat">Chat sound enabled</div><div data-hook="tsound-highlight">Nick highlight sound enabled</div><div data-hook="tsound-crowd">Crowd sound enabled</div></div><div class=\'section\' data-hook=\'inputsec\'></div><div class=\'section\' data-hook=\'videosec\'><div>Viewport Mode:<select data-hook=\'viewmode\'><option>Dynamic</option><option>Restricted 840x410</option><option>Full 1x Zoom</option><option>Full 1.25x Zoom</option><option>Full 1.5x Zoom</option><option>Full 1.75x Zoom</option><option>Full 2x Zoom</option><option>Full 2.25x Zoom</option><option>Full 2.5x Zoom</option></select></div><div>FPS Limit:<select data-hook=\'fps\'><option>None (Recommended)</option><option>30</option></select></div><div>Resolution Scaling:<select data-hook=\'resscale\'><option>100%</option><option>75%</option><option>50%</option><option>25%</option></select></div><div>카메라 시점:<select data-hook=\'follow\'>' + playersToFollowList() + '</select></div><div data-hook="tvideo-teamcol">Custom team colors enabled</div><div data-hook="tvideo-showindicators">Show chat indicators</div><div data-hook="tvideo-showavatars">Show player avatars</div></div></div></div>';
+aa.N = '<div class=\'dialog settings-view\'><h1>⚙️설정</h1><button data-hook=\'close\'>닫기</button><div class=\'tabs\'><button data-hook=\'soundbtn\'>🔊소리</button><button data-hook=\'videobtn\'>🎥카메라</button><button data-hook=\'inputbtn\'>⌨️키보드</button><button data-hook=\'miscbtn\'>🎸기타</button></div><div data-hook=\'presskey\' tabindex=\'-1\'><div>Press a key</div></div><div class=\'tabcontents\'><div class=\'section\' data-hook=\'miscsec\'><div class=\'loc\' data-hook=\'loc\'></div><div class=\'loc\' data-hook=\'loc-ovr\'></div><button data-hook=\'loc-ovr-btn\'></button></div><div class=\'section\' data-hook=\'soundsec\'><div data-hook="tsound-main">Sounds enabled</div><div data-hook="tsound-chat">Chat sound enabled</div><div data-hook="tsound-highlight">Nick highlight sound enabled</div><div data-hook="tsound-crowd">Crowd sound enabled</div></div><div class=\'section\' data-hook=\'inputsec\'></div><div class=\'section\' data-hook=\'videosec\'><div>Viewport Mode:<select data-hook=\'viewmode\'><option>Dynamic</option><option>Restricted 840x410</option><option>Full 1x Zoom</option><option>Full 1.25x Zoom</option><option>Full 1.5x Zoom</option><option>Full 1.75x Zoom</option><option>Full 2x Zoom</option><option>Full 2.25x Zoom</option><option>Full 2.5x Zoom</option></select></div><div>FPS Limit:<select data-hook=\'fps\'><option>None (Recommended)</option><option>30</option></select></div><div>Resolution Scaling:<select data-hook=\'resscale\'><option>100%</option><option>75%</option><option>50%</option><option>25%</option></select></div><div>카메라 시점:<select data-hook=\'follow\'>' + playersToFollowList() + '</select></div><div data-hook="tvideo-teamcol">Custom team colors enabled</div><div data-hook="tvideo-showindicators">Show chat indicators</div><div data-hook="tvideo-showavatars">Show player avatars</div></div></div></div>';
 aa.$l = 0;
 P.N = '<div class=\'simple-dialog-view\'><div class=\'dialog basic-dialog\'><h1 data-hook=\'title\'></h1><p data-hook=\'content\'></p><div class=\'buttons\' data-hook=\'buttons\'></div></div></div>';
 Xa.N = '<div class=\'stats-view\'><div data-hook=\'graph\'></div></div>';
