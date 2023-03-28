@@ -245,7 +245,7 @@ function GameStats() {
           {match[mtc].stadium.canBeStored && <button onClick={downloadMap} style={{ margin: '0 10px 0 30px' }}>Download map</button>}
         </h1>
         <button onClick={closeStats} style={{ position: 'absolute', right: 20 }} >닫기 ❌</button>
-        <div id='leftHalf' style={{ overflowY: 'scroll', width: '50%', float: 'left', height: '100%' }}>
+        <div id='leftHalf' style={{ overflowY: 'scroll', width: '40%', float: 'left', height: '100%' }}>
           <table style={{ width: '100%' }}><tbody>
             <tr id='trosso' style={{ textAlign: 'center' }}>
               <td style={{ fontSize: 40, color: 'red', width: '40%' }}>
@@ -344,10 +344,10 @@ function GameStats() {
             <PlayerStats />
           </table>
         </div >
-        <div id='rightHalf' style={{ position: 'absolute', left: '50%', top: '10%', overflowY: 'scroll', width: '50%', height: '90%' }}>
-          <div style={{ overflow: 'scroll' }}>
+        <div id='rightHalf' style={{ position: 'absolute', left: '40%', top: '10%', overflowY: 'scroll', width: '60%', height: '90%' }}>
+          <div style={{ position: 'absolute' }}>
             <ThirdStats />
-            <p style={{ textAlign: 'center', fontSize: 25, left: 270 }}>{selectedHeatmap.split(' ')[0]} - {selectedPlayer == -1 ? match[mtc].redTeam[0] : selectedPlayer}:</p>
+            <p style={{ margin: 'auto', marginTop: 30, marginBottom: 30, textAlign: 'center', fontSize: 25 }}>{selectedHeatmap.split(' ')[0]} - {selectedPlayer == -1 ? match[mtc].redTeam[0] : selectedPlayer}:</p>
             {match[mtc].stadium ? <HeatMap /> : null}
           </div>
         </div >

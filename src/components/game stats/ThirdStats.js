@@ -36,7 +36,7 @@ function ThirdStats() {
   }, [draw])
 
   return (
-    <canvas ref={canvasRef} width={1060} height={650} style={{ margin: 'auto', display: 'block', position: 'absolute', top: 0, bottom: '90%', left: 270, right: 0 }} ></canvas>
+    <canvas ref={canvasRef} width={1060} height={650} style={{ margin: 'auto', display: 'block', top: 0, bottom: '30%', left: 0, right: 0 }} ></canvas>
   );
 }
 
