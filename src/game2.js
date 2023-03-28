@@ -466,7 +466,30 @@ export function watchGoal(par) {
   autoClickValue = '' + g;
   document.getElementsByClassName("timebar")[0].click();
 }
-
+window.document.addEventListener('keydown', event => toggleChat(event));
+function toggleChat(event) {
+  let key = event.code || event.keyCode;  
+  if (key === 'Backquote' || key === 192) {
+    var bottomSec = document.getElementsByClassName('bottom-section')[0];
+    var statSec = document.getElementsByClassName('stats-view')[0];
+    var chatInput = document.querySelector('[data-hook="input"]');
+    var chatLog = document.querySelector('[data-hook="log"]');
+    if(bottomSec!=undefined && statSec!=undefined && chatInput!=undefined && chatLog!=undefined){
+      if (bottomSec.style.display == 'none') { 
+        bottomSec.removeAttribute('style');
+        bottomSec.style.position = 'absolute';
+        bottomSec.style.left = '0px';
+        bottomSec.style.right = '0px';
+        bottomSec.style.bottom = '0px';
+        bottomSec.style.background = '#1A2125';
+        statSec.style.background = 'unset';
+        chatInput.style.background = '#1A2125';
+        chatLog.scrollTo(0, chatLog.scrollHeight);
+      }
+      else { bottomSec.style.display = 'none'; }
+    }
+  }
+}
 function hc() {
 }
 function r() {
