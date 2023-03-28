@@ -12,18 +12,18 @@ function ThirdStats() {
 
   function draw(ctx) {
 
-    drawStadium(ctx, stadium, false);
+    drawStadium(ctx, stadium);
     ctx.setTransform(1, 0, 0, 1, 0, 0)
     ctx.font = "45px Arial";
     ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
-    ctx.fillRect(175, 0, 150, 250);
+    ctx.fillRect(370, 35, 320, 580);
     ctx.fillStyle = "rgba(255, 255, 255, 1)";
     ctx.strokeStyle = "rgba(0, 0, 0, 1)";
     ctx.lineWidth = 8;
 
     for (var i = 0; i < 3; i++) {
-      ctx.strokeText("" + Math.round(100 * (match[mtc].thirds[i] / (match[mtc].thirds[0] + match[mtc].thirds[1] + match[mtc].thirds[2]))) + "%", 70 + 140 * i, 147);
-      ctx.fillText("" + Math.round(100 * (match[mtc].thirds[i] / (match[mtc].thirds[0] + match[mtc].thirds[1] + match[mtc].thirds[2]))) + "%", 70 + 140 * i, 147);
+      ctx.strokeText("" + Math.round(100 * (match[mtc].thirds[i] / (match[mtc].thirds[0] + match[mtc].thirds[1] + match[mtc].thirds[2]))) + "%", 170 + 320 * i, 370);
+      ctx.fillText("" + Math.round(100 * (match[mtc].thirds[i] / (match[mtc].thirds[0] + match[mtc].thirds[1] + match[mtc].thirds[2]))) + "%", 170 + 320 * i, 370);
     }
   };
 
@@ -36,7 +36,7 @@ function ThirdStats() {
   }, [draw])
 
   return (
-    <canvas ref={canvasRef} width={500} height={250} style={{ margin: 'auto', display: 'block', position: 'absolute', top: 0, bottom: '70%', left: 270, right: 0 }} ></canvas>
+    <canvas ref={canvasRef} width={1060} height={650} style={{ margin: 'auto', display: 'block', position: 'absolute', top: 0, bottom: '90%', left: 270, right: 0 }} ></canvas>
   );
 }
 

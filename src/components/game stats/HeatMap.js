@@ -30,7 +30,7 @@ function HeatMap() {
 
   function draw(ctx) {
 
-    drawStadium(ctx, stadium, true);
+    drawStadium(ctx, stadium);
 
     var player = selectedPlayer;
     if (player === -1) player = match[mtc].redTeam[0];
