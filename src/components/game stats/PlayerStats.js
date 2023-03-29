@@ -48,7 +48,7 @@ function PlayerStats() {
   }
 
   function handleClick(e) {
-    const tab = ['Players', '', 'Goals', 'Assists', 'Kicks', 'Passes', 'Shots On Goal', 'Bumps', 'Touches'];
+    const tab = ['플레이어', '', '골', '도움', '킥', '패스', '슈팅', '경합', '터치'];
     dispatch(selectStat(tab.indexOf(e.target.textContent)))
   }
 
@@ -66,7 +66,7 @@ function PlayerStats() {
     e.target.style.cursor = 'pointer';
     e.target.bgColor = 'darkgrey'
     if (e.target.className === 'leftStat') {
-      dispatch(selectHeatmap('Heatmap'))
+      dispatch(selectHeatmap('히트맵'))
       dispatch(selectPlayer(e.target.textContent.substring(1)))
     }
   }
@@ -83,15 +83,15 @@ function PlayerStats() {
       </tr>
       <tr onClick={handleClick} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
         <td className="leftStat" style={{ width: '25%' }}>플레이어</td>
-        <td className="centerStat">Goals</td>
-        <td className="centerStat">Assists</td>
-        <td className="centerStat">Kicks</td>
-        <td className="centerStat">Passes</td>
-        <td className="centerStat">Shots On Goal</td>
+        <td className="centerStat">골</td>
+        <td className="centerStat">도움</td>
+        <td className="centerStat">킥</td>
+        <td className="centerStat">패스</td>
+        <td className="centerStat">슈팅</td>
         {match[mtc].spaceMode && (
           <>
-            <td className="centerStat">Bumps</td>
-            <td className="centerStat">Touches</td>
+            <td className="centerStat">경합</td>
+            <td className="centerStat">터치</td>
           </>
         )}
       </tr>
@@ -103,11 +103,11 @@ function PlayerStats() {
               <td className="leftStat" onMouseOver={showHeatMap} onMouseOut={handleMouseOut}>
                 <div className={"flagico f-" + stat[1]} /> {stat[0]}
               </td>
-              <td className="centerStat" onClick={changeHeatmap} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} stat={"Goals"} player={stat[0]}>{stat[2]}</td>
-              <td className="centerStat" onClick={changeHeatmap} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} stat={"Assists"} player={stat[0]}>{stat[3]}</td>
-              <td className="centerStat" onClick={changeHeatmap} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} stat={"Kicks"} player={stat[0]}>{stat[4]}</td>
-              <td className="centerStat" onClick={changeHeatmap} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} stat={"Passes"} player={stat[0]}>{stat[5]}</td>
-              <td className="centerStat" onClick={changeHeatmap} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} stat={"Shots"} player={stat[0]}>{stat[6]}</td>
+              <td className="centerStat" onClick={changeHeatmap} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} stat={"골"} player={stat[0]}>{stat[2]}</td>
+              <td className="centerStat" onClick={changeHeatmap} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} stat={"도움"} player={stat[0]}>{stat[3]}</td>
+              <td className="centerStat" onClick={changeHeatmap} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} stat={"킥"} player={stat[0]}>{stat[4]}</td>
+              <td className="centerStat" onClick={changeHeatmap} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} stat={"패스"} player={stat[0]}>{stat[5]}</td>
+              <td className="centerStat" onClick={changeHeatmap} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} stat={"슈팅"} player={stat[0]}>{stat[6]}</td>
               {match[mtc].spaceMode && (
                 <>
                   <td className="centerStat">{stat[7]}</td>

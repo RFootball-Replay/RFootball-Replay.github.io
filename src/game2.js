@@ -109,6 +109,7 @@ function bringSettings() {
     top: '25vh',
     left: '37.5vw'
   }, { duration: 300, easing: 'swing', queue: false });
+  document.getElementById("video_button").click();
 }
 
 function leaveSettings() {
@@ -471,19 +472,14 @@ function toggleChat(event) {
   let key = event.code || event.keyCode;  
   if (key === 'Backquote' || key === 192) {
     var bottomSec = document.getElementsByClassName('bottom-section')[0];
-    var statSec = document.getElementsByClassName('stats-view')[0];
-    var chatInput = document.querySelector('[data-hook="input"]');
     var chatLog = document.querySelector('[data-hook="log"]');
-    if(bottomSec!=undefined && statSec!=undefined && chatInput!=undefined && chatLog!=undefined){
+    if(bottomSec!=undefined && chatLog!=undefined){
       if (bottomSec.style.display == 'none') { 
         bottomSec.removeAttribute('style');
-        bottomSec.style.position = 'absolute';
         bottomSec.style.left = '0px';
         bottomSec.style.right = '0px';
         bottomSec.style.bottom = '0px';
         bottomSec.style.background = '#1A2125';
-        statSec.style.background = 'unset';
-        chatInput.style.background = '#1A2125';
         chatLog.scrollTo(0, chatLog.scrollHeight);
       }
       else { bottomSec.style.display = 'none'; }
@@ -10729,7 +10725,7 @@ var Pb = {
   },
   uc = {
   };
-p.Ia = new p(0, 16777215, 0, - 1, '👀관중', 't-spec', 0, 0);
+p.Ia = new p(0, 16777215, 0, - 1, '🪑벤치', 't-spec', 0, 0);
 p.fa = new p(1, 15035990, - 1, 8, '🟥레드', 't-red', 0, 2);
 p.xa = new p(2, 5671397, 1, 16, '🟦블루', 't-blue', 0, 4);
 p.Ia.pg = p.Ia;

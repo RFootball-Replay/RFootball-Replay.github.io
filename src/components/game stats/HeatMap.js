@@ -35,7 +35,7 @@ function HeatMap() {
     var player = selectedPlayer;
     if (player === -1) player = match[mtc].redTeam[0];
 
-    if (selectedHeatmap === 'Heatmap') {
+    if (selectedHeatmap === '히트맵') {
       ctx.fillStyle = "rgba(255, 0, 0, 0.006)";
       const pos = playerPos[mtc][playerList.indexOf(player)];
       if (pos === undefined) return;
@@ -46,7 +46,7 @@ function HeatMap() {
       }
     } else {
       const stat = selectedHeatmap.split(' ')[0];
-      if (stat === 'Goals') {
+      if (stat === '골') {
         for (let goal of match[mtc].goals) {
           if (goal.scorer == player) {
             ctx.beginPath();
@@ -57,7 +57,7 @@ function HeatMap() {
             ctx.stroke();
           }
         }
-      } else if (stat === 'Assists') {
+      } else if (stat === '도움') {
         for (let goal of match[mtc].goals) {
           if (goal.assist?.player === player) {
             ctx.beginPath();
@@ -73,7 +73,7 @@ function HeatMap() {
             ctx.fill();
           }
         }
-      } else if (stat === 'Kicks') {
+      } else if (stat === '킥') {
         for (let kick of match[mtc].kicks) {
           if (kick.player === player) {
             ctx.beginPath();
@@ -82,7 +82,7 @@ function HeatMap() {
             ctx.fill();
           }
         }
-      } else if (stat === 'Passes') {
+      } else if (stat === '패스') {
         for (let pass of match[mtc].passes) {
           if (pass.player === player) {
             ctx.beginPath();
@@ -91,7 +91,7 @@ function HeatMap() {
             drawArrow(ctx, pass.lastShot, pass.shot)
           }
         }
-      } else if (stat === 'Shots') {
+      } else if (stat === '슈팅') {
         for (let shot of match[mtc].shots) {
           if (shot.player === player) {
             ctx.beginPath();

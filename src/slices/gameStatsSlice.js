@@ -10,7 +10,7 @@ export const gameStatsSlice = createSlice({
     selectedMatch: 0,
     selectedStat: -1,
     selectedPlayer: -1,
-    selectedHeatmap: 'Heatmap'
+    selectedHeatmap: '히트맵'
   },
   reducers: {
     setDivStyle: (state, action) => {
@@ -25,7 +25,7 @@ export const gameStatsSlice = createSlice({
       state.selectedMatch = 0;
       state.selectedPlayer = -1;
       state.selectedStat = -1;
-      state.selectedHeatmap = 'Heatmap';
+      state.selectedHeatmap = '히트맵';
     },
     showNextMatch: (state) => {
       state.selectedMatch++
@@ -64,7 +64,7 @@ export const gameStatsSlice = createSlice({
         selectedMatch: 0,
         selectedStat: -1,
         selectedPlayer: -1,
-        selectedHeatmap: 'Heatmap'
+        selectedHeatmap: '히트맵'
       }
     }
   },

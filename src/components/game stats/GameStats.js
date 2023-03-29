@@ -309,22 +309,22 @@ function GameStats() {
 
             <tr>
               <td className='redStats'>{(match[mtc].possRed / (match[mtc].possRed + match[mtc].possBlue) * 100).toFixed(1)}%</td>
-              <td className="center">POSSESSION</td>
+              <td className="center">점유율</td>
               <td className='blueStats'>{(match[mtc].possBlue / (match[mtc].possRed + match[mtc].possBlue) * 100).toFixed(1)}%</td>
             </tr>
             <tr>
               <td className="redStats">{match[mtc].kicksRed}</td>
-              <td className="center">KICKS</td>
+              <td className="center">킥</td>
               <td className="blueStats">{match[mtc].kicksBlue}</td>
             </tr>
             <tr>
               <td className="redStats">{match[mtc].passesRed}</td>
-              <td className="center">PASSES</td>
+              <td className="center">패스</td>
               <td className="blueStats">{match[mtc].passesBlue}</td>
             </tr>
             <tr>
               <td className="redStats">{match[mtc].shotsRed}</td>
-              <td className="center">SHOTS ON GOAL</td>
+              <td className="center">슈팅</td>
               <td className="blueStats">{match[mtc].shotsBlue}</td>
             </tr>
 
