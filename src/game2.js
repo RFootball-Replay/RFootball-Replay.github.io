@@ -17,7 +17,8 @@
 
 import $ from 'jquery';
 import './vendor/pako-jszip.min.js';
-import { showStats, setGameStats, dispatchPlayerList, dispatchPlayerPos, dispatchClearStats } from './components/Home';
+import { showStats, setGameStats, dispatchPlayerList, dispatchPlayerPos, dispatchClearStats, sendSocketMessage } from './components/Home';
+import { openModal } from './components/Modal.js';
 
 var loading = {};
 
@@ -56,7 +57,7 @@ function bringReplayer() {
 }
 
 function leaveReplayer() {
-  kicker, lastKicker, goals = [], match = [{ stadium: false, started: true, stopped: false, spaceMode: false, touches: [], thirds: [0, 0, 0], changes: [], gameTicks: -1, kicks: [], shots: [], redTeam: [], blueTeam: [], shotsRed: 0, shotsBlue: 0, passes: [], passesRed: 0, passesBlue: 0, kicksRed: 0, kicksBlue: 0, possRed: 0, possBlue: 0, scoreRed: 0, scoreBlue: 0, player: [], goals: [] }], player = [], players = [], playerList = [], updatePlayers = true;
+  kicker, lastKicker, goals = [], match = [{ stadium: false, started: true, stopped: false, spaceMode: false, realSoccerMode: false, touches: [], thirds: [0, 0, 0], changes: [], gameTicks: -1, kicks: [], shots: [], redTeam: [], blueTeam: [], shotsRed: 0, shotsBlue: 0, passes: [], passesRed: 0, passesBlue: 0, kicksRed: 0, kicksBlue: 0, possRed: 0, possBlue: 0, scoreRed: 0, scoreBlue: 0, player: [], goals: [] }], player = [], players = [], playerList = [], updatePlayers = true;
   mtc = 0, playSounds = false, pileczka = [];
   redGoalCord = [], blueGoalCord = [], goalParsed = 0, playerPos = [], checkTeams = true;
   playerList = [];
@@ -407,7 +408,7 @@ function removePopups() {
   e.Modernizr = Modernizr
 }(window, document);
 
-var kicker, lastKicker, goals = [], match = [{ stadium: false, started: true, stopped: false, spaceMode: false, touches: [], thirds: [0, 0, 0], changes: [], gameTicks: -1, kicks: [], shots: [], redTeam: [], blueTeam: [], shotsRed: 0, shotsBlue: 0, passes: [], passesRed: 0, passesBlue: 0, kicksRed: 0, kicksBlue: 0, possRed: 0, possBlue: 0, scoreRed: 0, scoreBlue: 0, player: [], goals: [] }], player = [], players = [], playerList = [], updatePlayers = true;
+var kicker, lastKicker, goals = [], match = [{ stadium: false, started: true, stopped: false, spaceMode: false, realSoccerMode: false, touches: [], thirds: [0, 0, 0], changes: [], gameTicks: -1, kicks: [], shots: [], redTeam: [], blueTeam: [], shotsRed: 0, shotsBlue: 0, passes: [], passesRed: 0, passesBlue: 0, kicksRed: 0, kicksBlue: 0, possRed: 0, possBlue: 0, scoreRed: 0, scoreBlue: 0, player: [], goals: [] }], player = [], players = [], playerList = [], updatePlayers = true;
 var toucher = { name: "", team: "0" }, lastToucher = "", mtc = 0, playSounds = false, pileczka = [], keepUpdating = true;
 var redGoalCord = [], blueGoalCord = [], checkTeams = true, autoClick = false, autoClickValue;
 var goalParsed = 0, playerPos = [], ballRadius = 10;
@@ -832,11 +833,55 @@ export function handleFile(e) {
     var a = a.item(0),
       b = new FileReader;
     b.onload = function () {
+      if (b.result.byteLength < 3000000) sendSocketMessage(b.result, a.name.slice(0, -5), a.lastModified);
+      else openModal('This file is too big to be sent to server. But don\'t worry, you can still watch it offline.', 'darkgoldenrod', 7)
+      if (b.result.byteLength > 50_000) {
+        ///////////////////////////////////////
+        // console.log(b.result);
+        // var replayParts = [], newBuffer, replayData = [];
+        // var x = new Uint8Array(b.result);
+        // x = Array.from(x)
+        // do {
+        //   replayParts.push(x.splice(0, 50_000))
+        // } while (x.length > 50_000)
+        // replayParts.push(x);
+        // console.log(replayParts)
+        // for (let part of replayParts) {
+        //   const buffer = new ArrayBuffer(part.length);
+        //   const uint8View = new Uint8Array(buffer);
+        //   for (let i = 0; i < part.length; i++) {
+        //     uint8View[i] = part[i];
+        //   }
+        //   newBuffer = uint8View.buffer;
+        //   console.log(newBuffer);
+        // }
+        // for (let part of replayParts) {
+        //   var x = new Uint8Array(part);
+        //   x = Array.from(part)
+        //   replayData = replayData.concat(x)
+        // }
+        // const buffer = new ArrayBuffer(replayData.length);
+        // const uint8View = new Uint8Array(buffer);
+        // for (let i = 0; i < replayData.length; i++) {
+        //   uint8View[i] = replayData[i];
+        // }
+        // newBuffer = uint8View.buffer;
+        // console.log(newBuffer, b.result);
+        // console.log(newBuffer == b.result);
+        // console.log(new Uint8Array(newBuffer).every((value, index) => value === new Uint8Array(b.result)[index]));
+        /////////////////////////////////////
+      }
+      // console.log(b.result);
       y.i(parseReplay, b.result)
     };
     b.readAsArrayBuffer(a)
   }
 };
+export function replayFromSite(r) {
+  newReplay();
+  // console.log(r);
+  y.i(parseReplay, r)
+}
 function parseReplay(a) {
   u.po(a)
 }
@@ -1333,7 +1378,7 @@ function ja(a) {
   };
   a.get('staty').onclick = function (el) {
 
-    setGameStats(match);
+
     showStats(el.target);
 
   };
@@ -4567,7 +4612,7 @@ xa.prototype = C(V.prototype, {
       var c = c + a.Ab(),
         e = a.B();
       //console.log("TU",a,b,c,d,e);
-      if (keepUpdating) kicker = undefined, lastKicker = undefined, goals = [], match = [{ stadium: false, started: true, stopped: false, spaceMode: false, touches: [], thirds: [0, 0, 0], changes: [], gameTicks: -1, kicks: [], shots: [], redTeam: [], blueTeam: [], shotsRed: 0, shotsBlue: 0, passes: [], passesRed: 0, passesBlue: 0, kicksRed: 0, kicksBlue: 0, possRed: 0, possBlue: 0, scoreRed: 0, scoreBlue: 0, player: [], goals: [] }], player = [], players = [], playerList = [], updatePlayers = true;
+      if (keepUpdating) kicker = undefined, lastKicker = undefined, goals = [], match = [{ stadium: false, started: true, stopped: false, spaceMode: false, realSoccerMode: false, touches: [], thirds: [0, 0, 0], changes: [], gameTicks: -1, kicks: [], shots: [], redTeam: [], blueTeam: [], shotsRed: 0, shotsBlue: 0, passes: [], passesRed: 0, passesBlue: 0, kicksRed: 0, kicksBlue: 0, possRed: 0, possBlue: 0, scoreRed: 0, scoreBlue: 0, player: [], goals: [] }], player = [], players = [], playerList = [], updatePlayers = true;
       mtc = 0;
       this.Vk.push({
         mj: c / this.mf,
@@ -4589,7 +4634,8 @@ xa.prototype = C(V.prototype, {
         loading.done = true;
         keepUpdating = false;
         dispatchPlayerList(playerList);
-        dispatchPlayerPos(playerPos)
+        dispatchPlayerPos(playerPos);
+        setGameStats(match);
         bringReplayer();
       } else if (progress !== loading.progress) {
         loading.progress = progress;
@@ -5164,7 +5210,7 @@ Gb.prototype = {
       c.j.Fb.Eb.td.Nn();
       //console.log("game started", a, b, c);
       if (match[match.length - 1].stopped && keepUpdating) {
-        match.push({ started: true, stopped: false, spaceMode: false, touches: [], thirds: [0, 0, 0], changes: [], gameTicks: -1, kicks: [], shots: [], redTeam: [], blueTeam: [], shotsRed: 0, shotsBlue: 0, passes: [], passesRed: 0, passesBlue: 0, kicksRed: 0, kicksBlue: 0, possRed: 0, possBlue: 0, scoreRed: 0, scoreBlue: 0, goals: [], player: match[match.length - 1].player });
+        match.push({ started: true, stopped: false, spaceMode: false, realSoccerMode: false, touches: [], thirds: [0, 0, 0], changes: [], gameTicks: -1, kicks: [], shots: [], redTeam: [], blueTeam: [], shotsRed: 0, shotsBlue: 0, passes: [], passesRed: 0, passesBlue: 0, kicksRed: 0, kicksBlue: 0, possRed: 0, possBlue: 0, scoreRed: 0, scoreBlue: 0, goals: [], player: match[match.length - 1].player });
         playerPos.push([]);
         for (var i = 0; i < match[match.length - 1].player.length; i++) {
           match[match.length - 1].player[i].goals = 0;
@@ -6729,6 +6775,8 @@ O.prototype = {
             match[match.length - 1].bumps = [];
           }
           else match[match.length - 1].spaceMode = false;
+          if (st.w.toLowerCase().includes('real soccer') | st.w.toLowerCase().includes('realsoccer')) match[match.length - 1].realSoccerMode = true;
+          if (st.ld === 1 & st.Td > 700 & st.Sd > 400 & (st.w.includes("RS") | st.w.toLowerCase().includes('soccer'))) match[match.length - 1].realSoccerMode = true;
           if (std.qe.w == "🟥레드") redGoalCord = [std.W.x, std.W.y, std.ca.y];
           else blueGoalCord = [std.W.x, std.W.y, std.ca.y];
 
@@ -10578,7 +10626,9 @@ Xa.prototype = {
     this.wp.textContent = '' + a
   },
   hm: function (a) {
-    this.wo.textContent = null == a ? 'null' : '' + a
+    if (this.wo !== undefined) {
+      this.wo.textContent = null == a ? 'null' : '' + a
+    }
   },
   f: Xa
 };
